@@ -1,0 +1,1572 @@
+Analysis & Synthesis report for de1_soc
+Tue Sep 15 12:27:13 2020
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0|altsyncram_66j1:auto_generated
+ 14. Parameter Settings for User Entity Instance: sm_top:sm_top|sm_metafilter:f0
+ 15. Parameter Settings for User Entity Instance: sm_top:sm_top|sm_metafilter:f1
+ 16. Parameter Settings for User Entity Instance: sm_top:sm_top|sm_metafilter:f2
+ 17. Parameter Settings for User Entity Instance: sm_top:sm_top|sm_clk_divider:sm_clk_divider
+ 18. Parameter Settings for User Entity Instance: sm_top:sm_top|sm_cpu:sm_cpu|sm_rom:reset_rom
+ 19. Parameter Settings for Inferred Entity Instance: sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "sm_top:sm_top"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Sep 15 12:27:13 2020       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; de1_soc                                     ;
+; Top-level Entity Name           ; de1_soc                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 236                                         ;
+; Total pins                      ; 141                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 768                                         ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; de1_soc            ; de1_soc            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                           ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                                              ; Library ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; ../de1_soc.v                     ; yes             ; User Verilog HDL File                 ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v                      ;         ;
+; ../../program/program.hex        ; yes             ; User Hexadecimal (Intel-Format) File  ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/program/program.hex                    ;         ;
+; ../../../src/sm_rom.v            ; yes             ; User Verilog HDL File                 ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_rom.v                                 ;         ;
+; ../../../src/sm_register.v       ; yes             ; User Verilog HDL File                 ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_register.v                            ;         ;
+; ../../../src/sm_hex_display.v    ; yes             ; User Verilog HDL File                 ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_hex_display.v                         ;         ;
+; ../../../src/sm_cpu.v            ; yes             ; User Verilog HDL File                 ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v                                 ;         ;
+; sm_top.v                         ; yes             ; Auto-Found Verilog HDL File           ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v                                 ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/altsyncram.tdf                                         ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                  ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/lpm_mux.inc                                            ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/lpm_decode.inc                                         ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/aglobal171.inc                                         ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                                          ;         ;
+; altrom.inc                       ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/altrom.inc                                             ;         ;
+; altram.inc                       ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/altram.inc                                             ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                          ; c:/bin/altera/17.1/quartus/libraries/megafunctions/altdpram.inc                                           ;         ;
+; db/altsyncram_66j1.tdf           ; yes             ; Auto-Generated Megafunction           ; C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/project/db/altsyncram_66j1.tdf ;         ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                      ;
++---------------------------------------------+----------------------------------------------------+
+; Resource                                    ; Usage                                              ;
++---------------------------------------------+----------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 409                                                ;
+;                                             ;                                                    ;
+; Combinational ALUT usage for logic          ; 692                                                ;
+;     -- 7 input functions                    ; 4                                                  ;
+;     -- 6 input functions                    ; 105                                                ;
+;     -- 5 input functions                    ; 137                                                ;
+;     -- 4 input functions                    ; 117                                                ;
+;     -- <=3 input functions                  ; 329                                                ;
+;                                             ;                                                    ;
+; Dedicated logic registers                   ; 236                                                ;
+;                                             ;                                                    ;
+; I/O pins                                    ; 141                                                ;
+; Total MLAB memory bits                      ; 0                                                  ;
+; Total block memory bits                     ; 768                                                ;
+;                                             ;                                                    ;
+; Total DSP Blocks                            ; 0                                                  ;
+;                                             ;                                                    ;
+; Maximum fan-out node                        ; sm_top:sm_top|sm_clk_divider:sm_clk_divider|Mux0~0 ;
+; Maximum fan-out                             ; 209                                                ;
+; Total fan-out                               ; 4074                                               ;
+; Average fan-out                             ; 3.12                                               ;
++---------------------------------------------+----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                      ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Entity Name      ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |de1_soc                                        ; 692 (2)             ; 236 (0)                   ; 768               ; 0          ; 141  ; 0            ; |de1_soc                                                                                                    ; de1_soc          ; work         ;
+;    |sm_hex_display:digit_0|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_hex_display:digit_0                                                                             ; sm_hex_display   ; work         ;
+;    |sm_hex_display:digit_1|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_hex_display:digit_1                                                                             ; sm_hex_display   ; work         ;
+;    |sm_hex_display:digit_2|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_hex_display:digit_2                                                                             ; sm_hex_display   ; work         ;
+;    |sm_hex_display:digit_3|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_hex_display:digit_3                                                                             ; sm_hex_display   ; work         ;
+;    |sm_hex_display:digit_4|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_hex_display:digit_4                                                                             ; sm_hex_display   ; work         ;
+;    |sm_hex_display:digit_5|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_hex_display:digit_5                                                                             ; sm_hex_display   ; work         ;
+;    |sm_top:sm_top|                              ; 648 (0)             ; 236 (0)                   ; 768               ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top                                                                                      ; sm_top           ; work         ;
+;       |sm_clk_divider:sm_clk_divider|           ; 47 (46)             ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_clk_divider:sm_clk_divider                                                        ; sm_clk_divider   ; work         ;
+;          |sm_register_we:r_cntr|                ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_clk_divider:sm_clk_divider|sm_register_we:r_cntr                                  ; sm_register_we   ; work         ;
+;       |sm_cpu:sm_cpu|                           ; 601 (263)           ; 184 (0)                   ; 768               ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu                                                                        ; sm_cpu           ; work         ;
+;          |sm_alu:alu|                           ; 267 (267)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu                                                             ; sm_alu           ; work         ;
+;          |sm_control:sm_control|                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_control:sm_control                                                  ; sm_control       ; work         ;
+;          |sm_register:r_pc|                     ; 0 (0)               ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc                                                       ; sm_register      ; work         ;
+;          |sm_register_file:rf|                  ; 41 (41)             ; 160 (160)                 ; 768               ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf                                                    ; sm_register_file ; work         ;
+;             |altsyncram:rf_rtl_0|               ; 0 (0)               ; 0 (0)                     ; 768               ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0                                ; altsyncram       ; work         ;
+;                |altsyncram_66j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 768               ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0|altsyncram_66j1:auto_generated ; altsyncram_66j1  ; work         ;
+;          |sm_rom:reset_rom|                     ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_rom:reset_rom                                                       ; sm_rom           ; work         ;
+;       |sm_metafilter:f0|                        ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_metafilter:f0                                                                     ; sm_metafilter    ; work         ;
+;       |sm_metafilter:f1|                        ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_metafilter:f1                                                                     ; sm_metafilter    ; work         ;
+;       |sm_metafilter:f2|                        ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc|sm_top:sm_top|sm_metafilter:f2                                                                     ; sm_metafilter    ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                  ;
++---------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++---------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0|altsyncram_66j1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 24           ; 32           ; 24           ; 768  ; None ;
++---------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                       ;
++------------------------------------------------------------+---------------------------------------------+
+; Register name                                              ; Reason for Removal                          ;
++------------------------------------------------------------+---------------------------------------------+
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][31]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][31]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][30]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][30]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][29]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][29]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][28]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][28]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][27]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][27]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][26]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][26]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][25]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][25]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][24]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][24]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][23]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][23]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][22]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][22]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][21]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][21]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][20]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][20]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][19]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][19]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][18]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][18]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][17]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][17]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][16]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][16]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][15]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][15]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][14]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][14]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][13]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][13]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][12]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][12]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][11]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][11]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][10]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][10]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][9]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][9]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][8]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][8]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][7]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][7]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][6]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][6]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][5]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][5]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][4]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][4]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][3]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][3]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][2]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][2]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][1]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][1]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[5][0]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[7][0]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[13][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[15][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[21][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[23][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[29][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[31][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][31] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][31]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][31]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][30] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][30]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][30]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][29] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][29]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][29]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][28] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][28]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][28]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][27] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][27]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][27]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][26] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][26]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][26]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][25] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][25]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][25]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][24] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][24]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][24]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][23] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][23]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][23]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][22] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][22]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][22]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][21] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][21]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][21]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][20] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][20]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][20]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][19] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][19]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][19]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][18] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][18]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][18]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][17] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][17]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][17]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][16] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][16]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][16]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][15] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][15]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][15]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][14] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][14]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][14]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][13] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][13]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][13]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][12] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][12]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][12]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][11] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][11]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][11]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][10] ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][10]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][10]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][9]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][9]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][9]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][8]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][8]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][8]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][7]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][7]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][7]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][6]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][6]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][6]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][5]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][5]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][5]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][4]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][4]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][4]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][3]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][3]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][3]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][2]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][2]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][2]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][1]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][1]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][1]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[30][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[28][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[22][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[20][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[14][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[12][0]  ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[6][0]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[4][0]   ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[24..31]     ; Lost fanout                                 ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][0]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][0]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][0]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][0]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][31]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][31]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][31]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][31] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][26]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][26]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][26]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][26] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][27]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][27]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][27]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][28]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][28]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][28]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][27] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][28] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][25]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][25]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][25]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][25] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][24]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][24]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][24]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][24] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][23]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][23]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][23]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][23] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][22]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][22]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][22]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][22] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][15]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][15]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][15]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][15] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][19]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][19]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][19]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][19] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][21]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][21]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][21]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][20]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][20]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][20]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][21] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][20] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][18]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][18]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][18]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][18] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][17]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][17]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][17]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][17] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][16]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][16]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][16]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][16] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][4]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][4]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][4]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][4]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][5]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][5]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][5]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][5]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][6]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][6]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][6]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][6]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][7]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][7]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][7]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][7]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][3]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][3]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][3]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][3]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][2]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][2]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][2]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][2]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][1]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][1]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][1]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][13]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][13]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][13]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][14]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][14]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][14]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][13] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][14] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][12]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][12]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][12]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][12] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][11]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][11]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][11]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][11] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][10]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][10]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][10]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][10] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][9]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][9]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][9]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][9]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][8]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][8]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][8]   ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][8]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][29]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][29]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][29]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][29] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[3][30]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[11][30] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[19][30] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[27][30] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[1][30]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[9][30]  ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[25][30] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[24][30] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[10][30] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[18][30] ; Stuck at GND due to stuck port clock_enable ;
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf[26][30] ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 872                    ;                                             ;
++------------------------------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                   ;
++----------------------------------------------------+--------------------+-----------------------------------------------------+
+; Register name                                      ; Reason for Removal ; Registers Removed due to This Register              ;
++----------------------------------------------------+--------------------+-----------------------------------------------------+
+; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[31] ; Lost Fanouts       ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[30], ;
+;                                                    ;                    ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[29], ;
+;                                                    ;                    ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[28], ;
+;                                                    ;                    ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[27], ;
+;                                                    ;                    ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[26], ;
+;                                                    ;                    ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[25], ;
+;                                                    ;                    ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc|q[24]  ;
++----------------------------------------------------+--------------------+-----------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 236   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 24    ;
+; Number of registers using Asynchronous Clear ; 56    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 192   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu|ShiftRight1      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu|ShiftRight1      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu|ShiftRight1      ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu|ShiftRight1      ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rd1[26] ;
+; 18:1               ; 32 bits   ; 384 LEs       ; 384 LEs              ; 0 LEs                  ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|srcB[9]                     ;
+; 18:1               ; 15 bits   ; 180 LEs       ; 105 LEs              ; 75 LEs                 ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu|Mux3             ;
+; 21:1               ; 12 bits   ; 168 LEs       ; 108 LEs              ; 60 LEs                 ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu|Mux20            ;
+; 24:1               ; 3 bits    ; 48 LEs        ; 30 LEs               ; 18 LEs                 ; No         ; |de1_soc|sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu|Mux28            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0|altsyncram_66j1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                          ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                           ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sm_top:sm_top|sm_metafilter:f0 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; SIZE           ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sm_top:sm_top|sm_metafilter:f1 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; SIZE           ; 1     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sm_top:sm_top|sm_metafilter:f2 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; SIZE           ; 5     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sm_top:sm_top|sm_clk_divider:sm_clk_divider ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; shift          ; 16    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sm_top:sm_top|sm_cpu:sm_cpu|sm_rom:reset_rom ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; SIZE           ; 64    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0 ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                     ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                  ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                  ;
+; WIDTH_A                            ; 24                   ; Untyped                                                  ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                                  ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_B                            ; 24                   ; Untyped                                                  ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                                  ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                  ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                  ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                  ;
+; CBXI_PARAMETER                     ; altsyncram_66j1      ; Untyped                                                  ;
++------------------------------------+----------------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                ;
++-------------------------------------------+---------------------------------------------------------------------+
+; Name                                      ; Value                                                               ;
++-------------------------------------------+---------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                   ;
+; Entity Instance                           ; sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
+;     -- WIDTH_A                            ; 24                                                                  ;
+;     -- NUMWORDS_A                         ; 32                                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                        ;
+;     -- WIDTH_B                            ; 24                                                                  ;
+;     -- NUMWORDS_B                         ; 32                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                              ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ;
++-------------------------------------------+---------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sm_top:sm_top"                                                                                 ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; regData[31..24] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 236                         ;
+;     CLR SLD           ; 24                          ;
+;     ENA               ; 160                         ;
+;     ENA CLR           ; 32                          ;
+;     plain             ; 20                          ;
+; arriav_io_obuf        ; 73                          ;
+; arriav_lcell_comb     ; 698                         ;
+;     arith             ; 144                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 54                          ;
+;         2 data inputs ; 65                          ;
+;         4 data inputs ; 24                          ;
+;     extend            ; 4                           ;
+;         7 data inputs ; 4                           ;
+;     normal            ; 550                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 155                         ;
+;         4 data inputs ; 93                          ;
+;         5 data inputs ; 137                         ;
+;         6 data inputs ; 105                         ;
+; boundary_port         ; 141                         ;
+; stratixv_ram_block    ; 24                          ;
+;                       ;                             ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 7.46                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Tue Sep 15 12:26:35 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de1_soc -c de1_soc
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/colaa.desktop-q1njrrs/onedrive/hws/spds/labs/lab_01/board/de1_soc/de1_soc.v
+    Info (12023): Found entity 1: de1_soc File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/colaa.desktop-q1njrrs/onedrive/hws/spds/labs/lab_01/src/sm_rom.v
+    Info (12023): Found entity 1: sm_rom File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_rom.v Line: 2
+Info (12021): Found 2 design units, including 2 entities, in source file /users/colaa.desktop-q1njrrs/onedrive/hws/spds/labs/lab_01/src/sm_register.v
+    Info (12023): Found entity 1: sm_register File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_register.v Line: 3
+    Info (12023): Found entity 2: sm_register_we File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_register.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file /users/colaa.desktop-q1njrrs/onedrive/hws/spds/labs/lab_01/src/sm_hex_display.v
+    Info (12023): Found entity 1: sm_hex_display File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_hex_display.v Line: 2
+Info (12021): Found 4 design units, including 4 entities, in source file /users/colaa.desktop-q1njrrs/onedrive/hws/spds/labs/lab_01/src/sm_cpu.v
+    Info (12023): Found entity 1: sm_cpu File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 11
+    Info (12023): Found entity 2: sm_control File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 100
+    Info (12023): Found entity 3: sm_alu File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 171
+    Info (12023): Found entity 4: sm_register_file File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 208
+Warning (12019): Can't analyze file -- file ../../../src/sm_clk_divider.v is missing
+Info (12127): Elaborating entity "de1_soc" for the top level hierarchy
+Warning (10034): Output port "FPGA_I2C_SCLK" at de1_soc.v(75) has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 75
+Warning (12125): Using design file /users/colaa.desktop-q1njrrs/onedrive/hws/spds/labs/lab_01/src/sm_top.v, which is not specified as a design file for the current project, but contains definitions for 3 design units and 3 entities in project
+    Info (12023): Found entity 1: sm_top File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 3
+    Info (12023): Found entity 2: sm_metafilter File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 43
+    Info (12023): Found entity 3: sm_clk_divider File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 62
+Info (12128): Elaborating entity "sm_top" for hierarchy "sm_top:sm_top" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 211
+Info (12128): Elaborating entity "sm_metafilter" for hierarchy "sm_top:sm_top|sm_metafilter:f0" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 18
+Info (12128): Elaborating entity "sm_metafilter" for hierarchy "sm_top:sm_top|sm_metafilter:f1" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 19
+Info (12128): Elaborating entity "sm_metafilter" for hierarchy "sm_top:sm_top|sm_metafilter:f2" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 20
+Info (12128): Elaborating entity "sm_clk_divider" for hierarchy "sm_top:sm_top|sm_clk_divider:sm_clk_divider" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 30
+Info (12128): Elaborating entity "sm_register_we" for hierarchy "sm_top:sm_top|sm_clk_divider:sm_clk_divider|sm_register_we:r_cntr" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 75
+Info (12128): Elaborating entity "sm_cpu" for hierarchy "sm_top:sm_top|sm_cpu:sm_cpu" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 38
+Info (12128): Elaborating entity "sm_register" for hierarchy "sm_top:sm_top|sm_cpu:sm_cpu|sm_register:r_pc" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 34
+Info (12128): Elaborating entity "sm_rom" for hierarchy "sm_top:sm_top|sm_cpu:sm_cpu|sm_rom:reset_rom" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 38
+Warning (10850): Verilog HDL warning at sm_rom.v(14): number of words (11) in memory file does not match the number of elements in the address range [0:63] File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_rom.v Line: 14
+Warning (10030): Net "rom.data_a" at sm_rom.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_rom.v Line: 10
+Warning (10030): Net "rom.waddr_a" at sm_rom.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_rom.v Line: 10
+Warning (10030): Net "rom.we_a" at sm_rom.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_rom.v Line: 10
+Info (12128): Elaborating entity "sm_register_file" for hierarchy "sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 62
+Info (12128): Elaborating entity "sm_alu" for hierarchy "sm_top:sm_top|sm_cpu:sm_cpu|sm_alu:alu" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 82
+Info (12128): Elaborating entity "sm_control" for hierarchy "sm_top:sm_top|sm_cpu:sm_cpu|sm_control:sm_control" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_cpu.v Line: 96
+Info (12128): Elaborating entity "sm_hex_display" for hierarchy "sm_hex_display:digit_5" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 219
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer sm_top:sm_top|sm_clk_divider:sm_clk_divider|Mux0 File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_top.v Line: 77
+Warning (276027): Inferred dual-clock RAM node "sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "sm_top:sm_top|sm_cpu:sm_cpu|sm_rom:reset_rom|rom" is uninferred due to inappropriate RAM size File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/src/sm_rom.v Line: 10
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/project/db/de1_soc.ram0_sm_rom_e96ad487.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|rf_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 24
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 24
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0"
+Info (12133): Instantiated megafunction "sm_top:sm_top|sm_cpu:sm_cpu|sm_register_file:rf|altsyncram:rf_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "24"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "24"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_66j1.tdf
+    Info (12023): Found entity 1: altsyncram_66j1 File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/project/db/altsyncram_66j1.tdf Line: 27
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "FPGA_I2C_SDAT" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 76
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 80
+    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[24]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[29]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 81
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "FPGA_I2C_SCLK" is stuck at GND File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 75
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 520 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 154
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/labs/lab_01/board/de1_soc/de1_soc.v Line: 154
+Info (21057): Implemented 1036 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 53 output pins
+    Info (21060): Implemented 73 bidirectional pins
+    Info (21061): Implemented 871 logic cells
+    Info (21064): Implemented 24 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 91 warnings
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Tue Sep 15 12:27:13 2020
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:00:46
+
+

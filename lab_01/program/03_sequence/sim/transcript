@@ -1,0 +1,167 @@
+# do ../modelsim_script.tcl
+# -vlog01compat
+# +define+SIMULATION
+# +incdir+../../../src
+# +incdir+../../../testbench
+# ../../../src/*.v
+# ../../../testbench/*.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:04:31 on Sep 14,2020
+# vlog -reportprogress 300 -vlog01compat "+define+SIMULATION" "+incdir+../../../src" "+incdir+../../../testbench" ../../../src/sm_cpu.v ../../../src/sm_hex_display.v ../../../src/sm_register.v ../../../src/sm_rom.v ../../../src/sm_top.v ../../../testbench/testbench.v 
+# -- Compiling module sm_cpu
+# -- Compiling module sm_control
+# -- Compiling module sm_alu
+# -- Compiling module sm_register_file
+# -- Compiling module sm_hex_display
+# -- Compiling module sm_register
+# -- Compiling module sm_register_we
+# -- Compiling module sm_rom
+# -- Compiling module sm_top
+# -- Compiling module sm_metafilter
+# -- Compiling module sm_clk_divider
+# -- Compiling module sm_testbench
+# 
+# Top level modules:
+# 	sm_hex_display
+# 	sm_top
+# 	sm_testbench
+# End time: 22:04:31 on Sep 14,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.sm_testbench 
+# Start time: 22:04:32 on Sep 14,2020
+# Loading work.sm_testbench
+# Loading work.sm_cpu
+# Loading work.sm_register
+# Loading work.sm_rom
+# Loading work.sm_register_file
+# Loading work.sm_alu
+# Loading work.sm_control
+#     0  pc =  0  pcaddr= 00000000  instr = 24020000   v0 = 0 
+#     1  pc =  0  pcaddr= 00000000  instr = 24020000   v0 = 0 
+#     2  pc =  0  pcaddr= 00000000  instr = 24020000   v0 = 0 
+#     3  pc =  0  pcaddr= 00000000  instr = 24020000   v0 = 0 
+#     4  pc =  0  pcaddr= 00000000  instr = 24020000   v0 = 0 
+#     5  pc =  1  pcaddr= 00000004  instr = 24080000   v0 = 0 
+#     6  pc =  2  pcaddr= 00000008  instr = 24100019   v0 = 0 
+#     7  pc =  3  pcaddr= 0000000c  instr = 24110001   v0 = 0 
+#     8  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 0 
+#     9  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 0 
+#    10  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 0 
+#    11  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 0 
+#    12  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 0 
+#    13  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 7 
+#    14  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 7 
+#    15  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 7 
+#    16  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 7 
+#    17  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 21 
+#    18  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 21 
+#    19  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 21 
+#    20  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 21 
+#    21  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 42 
+#    22  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 42 
+#    23  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 42 
+#    24  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 42 
+#    25  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 70 
+#    26  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 70 
+#    27  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 70 
+#    28  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 70 
+#    29  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 105 
+#    30  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 105 
+#    31  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 105 
+#    32  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 105 
+#    33  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 147 
+#    34  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 147 
+#    35  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 147 
+#    36  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 147 
+#    37  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 196 
+#    38  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 196 
+#    39  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 196 
+#    40  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 196 
+#    41  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 252 
+#    42  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 252 
+#    43  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 252 
+#    44  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 252 
+#    45  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 315 
+#    46  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 315 
+#    47  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 315 
+#    48  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 315 
+#    49  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 385 
+#    50  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 385 
+#    51  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 385 
+#    52  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 385 
+#    53  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 462 
+#    54  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 462 
+#    55  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 462 
+#    56  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 462 
+#    57  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 546 
+#    58  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 546 
+#    59  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 546 
+#    60  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 546 
+#    61  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 637 
+#    62  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 637 
+#    63  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 637 
+#    64  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 637 
+#    65  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 735 
+#    66  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 735 
+#    67  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 735 
+#    68  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 735 
+#    69  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 840 
+#    70  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 840 
+#    71  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 840 
+#    72  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 840 
+#    73  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 952 
+#    74  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 952 
+#    75  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 952 
+#    76  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 952 
+#    77  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 1071 
+#    78  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 1071 
+#    79  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 1071 
+#    80  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 1071 
+#    81  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 1197 
+#    82  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 1197 
+#    83  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 1197 
+#    84  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 1197 
+#    85  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 1330 
+#    86  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 1330 
+#    87  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 1330 
+#    88  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 1330 
+#    89  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 1470 
+#    90  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 1470 
+#    91  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 1470 
+#    92  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 1470 
+#    93  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 1617 
+#    94  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 1617 
+#    95  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 1617 
+#    96  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 1617 
+#    97  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 1771 
+#    98  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 1771 
+#    99  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 1771 
+#   100  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 1771 
+#   101  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 1932 
+#   102  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 1932 
+#   103  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 1932 
+#   104  pc =  4  pcaddr= 00000010  instr = 00481021   v0 = 1932 
+#   105  pc =  5  pcaddr= 00000014  instr = 25080007   v0 = 2100 
+#   106  pc =  6  pcaddr= 00000018  instr = 02118023   v0 = 2100 
+#   107  pc =  7  pcaddr= 0000001c  instr = 1600fffc   v0 = 2100 
+#   108  pc =  8  pcaddr= 00000020  instr = 00000000   v0 = 2100 
+#   109  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   110  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   111  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   112  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   113  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   114  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   115  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   116  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   117  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   118  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   119  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+#   120  pc =  9  pcaddr= 00000024  instr = 1000ffff   v0 = 2100 
+# Timeout
+# ** Note: $stop    : ../../../testbench/testbench.v(61)
+#    Time: 2410 ns  Iteration: 1  Instance: /sm_testbench
+# Break in Module sm_testbench at ../../../testbench/testbench.v line 61
+# 0 ps
+# 2530500 ps
+# End time: 22:11:37 on Sep 14,2020, Elapsed time: 0:07:05
+# Errors: 0, Warnings: 0

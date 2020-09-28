@@ -1,0 +1,274 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/colaa.DESKTOP-Q1NJRRS/OneDrive/hws/SPDS/schoolMIPS-meta_bugfix/program/02_sqrt/sim
+vsm_alu
+Z1 !s110 1600034581
+!i10b 1
+!s100 eBOS[ljB<U_6gi3j=PUM53
+I7CIGNV7TfELTAJ578;X412
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1500676057
+Z4 8../../../src/sm_cpu.v
+Z5 F../../../src/sm_cpu.v
+L0 152
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1600034581.000000
+Z8 !s107 ../../../testbench/testbench.v|../../../src/sm_top.v|../../../src/sm_rom.v|../../../src/sm_register.v|../../../src/sm_hex_display.v|../../../src/sm_cpu.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|+define+SIMULATION|+incdir+../../../src|+incdir+../../../testbench|../../../src/sm_cpu.v|../../../src/sm_hex_display.v|../../../src/sm_register.v|../../../src/sm_rom.v|../../../src/sm_top.v|../../../testbench/testbench.v|
+!i113 1
+Z10 o-vlog01compat
+Z11 !s92 -vlog01compat +define+SIMULATION +incdir+../../../src +incdir+../../../testbench
+Z12 tCvgOpt 0
+vsm_clk_divider
+R1
+!i10b 1
+!s100 kN6T?ZA@fUL90NGe[;1dA0
+ITZZm_kY^AQF8@:]g3akWm1
+R2
+R0
+R3
+Z13 8../../../src/sm_top.v
+Z14 F../../../src/sm_top.v
+L0 62
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_control
+R1
+!i10b 1
+!s100 Jk:W?HnT;AD6`gLdcUES80
+I2l7PfS`[_bDR^=B?WZ2X63
+R2
+R0
+R3
+R4
+R5
+L0 93
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_cpu
+R1
+!i10b 1
+!s100 E7bFHOnZSQ`6WTJCR7;fJ3
+ICc]5aDj?7=EE1Bj4:eUB=0
+R2
+R0
+R3
+R4
+R5
+L0 11
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_hex_display
+R1
+!i10b 1
+!s100 V]>JbLcgZ;FBP?^J;__c[0
+I=OKXOMT;QzWV]ZT3BDUCX1
+R2
+R0
+R3
+8../../../src/sm_hex_display.v
+F../../../src/sm_hex_display.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_metafilter
+R1
+!i10b 1
+!s100 U20]RTk?O8PFbbSNf;Ih[2
+I`@J^RGG1^I]dSPjCilhaA1
+R2
+R0
+R3
+R13
+R14
+L0 43
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_register
+R1
+!i10b 1
+!s100 QVmO39Ro6kS]cH^M5d>8=0
+I[^cL^>E3E2NhfoJ;RXgb_2
+R2
+R0
+R3
+Z15 8../../../src/sm_register.v
+Z16 F../../../src/sm_register.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_register_file
+R1
+!i10b 1
+!s100 VOSj]bRG1^[Ii1GeUbVUA3
+IUWLa?MUXQfJTDc[DbaDGP3
+R2
+R0
+R3
+R4
+R5
+L0 183
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_register_we
+R1
+!i10b 1
+!s100 ZA]38gXRlQW02>9d6zJ7f1
+IB68WMz?^kIMo7Z]U;IN5[1
+R2
+R0
+R3
+R15
+R16
+L0 18
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_rom
+R1
+!i10b 1
+!s100 ?RPVEPggV_^5zZhF<bUH?2
+IYged`8oS;ccl<SL9^Z@Z]1
+R2
+R0
+R3
+8../../../src/sm_rom.v
+F../../../src/sm_rom.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_testbench
+R1
+!i10b 1
+!s100 l<HQc13lelEekb8b1Q_4_0
+In[USJ:WBS<86?YjMc;f652
+R2
+R0
+R3
+8../../../testbench/testbench.v
+F../../../testbench/testbench.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsm_top
+R1
+!i10b 1
+!s100 4jO9eDh;Dj=KE:ahGVGEH3
+I88V_BbV>0jY[czUBGb5Zc3
+R2
+R0
+R3
+R13
+R14
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12

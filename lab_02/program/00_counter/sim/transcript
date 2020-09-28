@@ -1,0 +1,208 @@
+# do ../modelsim_script.tcl
+# -vlog01compat
+# +define+SIMULATION
+# +incdir+../../../src
+# +incdir+../../../testbench
+# ../../../src/*.v
+# ../../../testbench/*.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:36:39 on Sep 13,2020
+# vlog -reportprogress 300 -vlog01compat "+define+SIMULATION" "+incdir+../../../src" "+incdir+../../../testbench" ../../../src/sm_cpu.v ../../../src/sm_hex_display.v ../../../src/sm_register.v ../../../src/sm_rom.v ../../../src/sm_top.v ../../../testbench/testbench.v 
+# -- Compiling module sm_cpu
+# -- Compiling module sm_control
+# -- Compiling module sm_alu
+# -- Compiling module sm_register_file
+# -- Compiling module sm_hex_display
+# -- Compiling module sm_register
+# -- Compiling module sm_register_we
+# -- Compiling module sm_rom
+# -- Compiling module sm_top
+# -- Compiling module sm_metafilter
+# -- Compiling module sm_clk_divider
+# -- Compiling module sm_testbench
+# 
+# Top level modules:
+# 	sm_hex_display
+# 	sm_top
+# 	sm_testbench
+# End time: 22:36:39 on Sep 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.sm_testbench 
+# Start time: 22:36:42 on Sep 13,2020
+# Loading work.sm_testbench
+# Loading work.sm_cpu
+# Loading work.sm_register
+# Loading work.sm_rom
+# Loading work.sm_register_file
+# Loading work.sm_alu
+# Loading work.sm_control
+#     0  pc =  0  pcaddr= 00000000  instr = 00001025   v0 = 0 
+#     1  pc =  0  pcaddr= 00000000  instr = 00001025   v0 = 0 
+#     2  pc =  0  pcaddr= 00000000  instr = 00001025   v0 = 0 
+#     3  pc =  0  pcaddr= 00000000  instr = 00001025   v0 = 0 
+#     4  pc =  0  pcaddr= 00000000  instr = 00001025   v0 = 0 
+#     5  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 0 
+#     6  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 1 
+#     7  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 1 
+#     8  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 2 
+#     9  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 2 
+#    10  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 3 
+#    11  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 3 
+#    12  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 4 
+#    13  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 4 
+#    14  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 5 
+#    15  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 5 
+#    16  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 6 
+#    17  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 6 
+#    18  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 7 
+#    19  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 7 
+#    20  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 8 
+#    21  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 8 
+#    22  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 9 
+#    23  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 9 
+#    24  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 10 
+#    25  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 10 
+#    26  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 11 
+#    27  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 11 
+#    28  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 12 
+#    29  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 12 
+#    30  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 13 
+#    31  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 13 
+#    32  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 14 
+#    33  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 14 
+#    34  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 15 
+#    35  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 15 
+#    36  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 16 
+#    37  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 16 
+#    38  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 17 
+#    39  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 17 
+#    40  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 18 
+#    41  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 18 
+#    42  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 19 
+#    43  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 19 
+#    44  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 20 
+#    45  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 20 
+#    46  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 21 
+#    47  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 21 
+#    48  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 22 
+#    49  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 22 
+#    50  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 23 
+#    51  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 23 
+#    52  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 24 
+#    53  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 24 
+#    54  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 25 
+#    55  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 25 
+#    56  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 26 
+#    57  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 26 
+#    58  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 27 
+#    59  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 27 
+#    60  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 28 
+#    61  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 28 
+#    62  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 29 
+#    63  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 29 
+#    64  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 30 
+#    65  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 30 
+#    66  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 31 
+#    67  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 31 
+#    68  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 32 
+#    69  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 32 
+#    70  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 33 
+#    71  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 33 
+#    72  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 34 
+#    73  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 34 
+#    74  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 35 
+#    75  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 35 
+#    76  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 36 
+#    77  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 36 
+#    78  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 37 
+#    79  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 37 
+#    80  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 38 
+#    81  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 38 
+#    82  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 39 
+#    83  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 39 
+#    84  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 40 
+#    85  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 40 
+#    86  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 41 
+#    87  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 41 
+#    88  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 42 
+#    89  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 42 
+#    90  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 43 
+#    91  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 43 
+#    92  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 44 
+#    93  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 44 
+#    94  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 45 
+#    95  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 45 
+#    96  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 46 
+#    97  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 46 
+#    98  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 47 
+#    99  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 47 
+#   100  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 48 
+#   101  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 48 
+#   102  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 49 
+#   103  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 49 
+#   104  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 50 
+#   105  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 50 
+#   106  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 51 
+#   107  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 51 
+#   108  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 52 
+#   109  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 52 
+#   110  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 53 
+#   111  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 53 
+#   112  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 54 
+#   113  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 54 
+#   114  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 55 
+#   115  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 55 
+#   116  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 56 
+#   117  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 56 
+#   118  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 57 
+#   119  pc =  1  pcaddr= 00000004  instr = 24420001   v0 = 57 
+#   120  pc =  2  pcaddr= 00000008  instr = 1000fffe   v0 = 58 
+# Timeout
+# ** Note: $stop    : ../../../testbench/testbench.v(61)
+#    Time: 2410 ns  Iteration: 1  Instance: /sm_testbench
+# Break in Module sm_testbench at ../../../testbench/testbench.v line 61
+# 0 ps
+# 2530500 ps
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# End time: 23:15:57 on Sep 13,2020, Elapsed time: 0:39:15
+# Errors: 39, Warnings: 2
