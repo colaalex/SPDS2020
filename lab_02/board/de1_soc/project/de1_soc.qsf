@@ -667,8 +667,16 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
+
+
+set_global_assignment -name VERILOG_FILE ../../../src/sm_top.v
+set_global_assignment -name VERILOG_FILE ../../../src/sm_ram.v
+set_global_assignment -name VERILOG_FILE ../../../src/sm_pwm.v
+set_global_assignment -name VERILOG_FILE ../../../src/sm_matrix.v
 set_global_assignment -name VERILOG_FILE ../../../src/sm_hex_display_our.v
 set_global_assignment -name VERILOG_FILE ../../../src/sm_hex_display_digit.v
+set_global_assignment -name VERILOG_FILE ../../../src/sm_gpio.v
+set_global_assignment -name VERILOG_FILE ../../../src/sm_als.v
 set_global_assignment -name VERILOG_FILE ../de1_soc.v
 set_global_assignment -name HEX_FILE ../../program/program.hex
 set_global_assignment -name VERILOG_FILE ../../../src/sm_rom.v
@@ -676,4 +684,5 @@ set_global_assignment -name VERILOG_FILE ../../../src/sm_register.v
 set_global_assignment -name VERILOG_FILE ../../../src/sm_hex_display.v
 set_global_assignment -name VERILOG_FILE ../../../src/sm_cpu.v
 set_global_assignment -name VERILOG_FILE ../../../src/sm_clk_divider.v
+set_global_assignment -name SDC_FILE de1_soc.sdc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

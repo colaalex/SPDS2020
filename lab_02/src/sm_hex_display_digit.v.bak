@@ -16,7 +16,7 @@ module sm_hex_display_digit
             2'b01: seven_segments = {1'b1, digit3[0], digit3[5], 2'b10, digit3[1], 1'b1, digit3[6], digit3[2], 1'b0, digit3[3], digit3[4]};
             default: count <= count + 1'b0;
         endcase
-        default: count <= count + 1'b1;
+        count <= count + 1'b1;
     end
 
 endmodule

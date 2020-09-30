@@ -197,6 +197,7 @@ module de1_soc(
     wire [  3:0 ] clkDevide =  SW [8:5];
     wire [  4:0 ] regAddr   =  SW [4:0];
     wire [ 31:0 ] regData;
+	 wire [  7:0 ] regDIP    =  GPIO_1[7:0];
 
     //cores
     sm_top sm_top
@@ -207,6 +208,8 @@ module de1_soc(
         .clkEnable  ( clkEnable ),
         .clk        ( clk       ),
         .regAddr    ( regAddr   ),
+		  .regDIP     ( regDIP    ),
+		  .gpioInput  ( regDIP    ),
         .regData    ( regData   )
     );
 
@@ -215,6 +218,11 @@ module de1_soc(
     assign LEDR[9:1] = regData[8:0];
 
     wire [ 31:0 ] h7segment = regData;
+	 wire [6:0] segments;
+	 sm_hex_display_our digit_our (regData[3:0], segments[6:0]);
+	 sm_hex_display_digit hex_display (segments[6:0], GPIO_0[11:0]);
+	 
+
 
     sm_hex_display digit_5 ( h7segment [23:20] , HEX5 [6:0] );
     sm_hex_display digit_4 ( h7segment [19:16] , HEX4 [6:0] );
@@ -222,26 +230,5 @@ module de1_soc(
     sm_hex_display digit_2 ( h7segment [11: 8] , HEX2 [6:0] );
     sm_hex_display digit_1 ( h7segment [ 7: 4] , HEX1 [6:0] );
     sm_hex_display digit_0 ( h7segment [ 3: 0] , HEX0 [6:0] );
-
-    assign GPIO_1[12:1] = seven_segments;
-    wire [31:0] our_h7segment = 32'h834;
-
-    wire [11:0] seven_segments;
-    sm_hex_display_digit sm_hex_display_digit
-    (
-        .digit1 (digit1),
-        .digit2 (digit2),
-        .digit3 (digit3),
-        .clkIn (clkIn),
-        .seven_segments (seven_segments)
-    );
-
-    wire [6:0] digit3;
-    wire [6:0] digit2;
-    wire [6:0] digit1;
-
-    sm_hex_display_our digit_00 (our_h7segment [3:0], digit3 [6:0]);
-    sm_hex_display_our digit_01 (our_h7segment [7:4], digit2 [6:0]);
-    sm_hex_display_our digit_02 (our_h7segment [11:8], digit1 [6:0]);
 
 endmodule

@@ -223,25 +223,4 @@ module de1_soc(
     sm_hex_display digit_1 ( h7segment [ 7: 4] , HEX1 [6:0] );
     sm_hex_display digit_0 ( h7segment [ 3: 0] , HEX0 [6:0] );
 
-    assign GPIO1_D[12:1] = seven_segments;
-    wire [31:0] our_h7segment = 32'h834;
-
-    wire [11:0] seven_segments;
-    sm_hex_display_digit sm_hex_display_digit
-    (
-        .digit1 (digit1),
-        .digit2 (digit2),
-        .digit3 (digit3),
-        .clkIn (clkIn),
-        .seven_segments (seven_segments)
-    );
-
-    wire [6:0] digit3;
-    wire [6:0] digit2;
-    wire [6:0] digit1;
-
-    sm_hex_display_our digit_00 (our_h7segment [3:0], digit3 [6:0]);
-    sm_hex_display_our digit_01 (our_h7segment [7:4], digit2 [6:0]);
-    sm_hex_display_our digit_02 (our_h7segment [11:8], digit1 [6:0]);
-
 endmodule
