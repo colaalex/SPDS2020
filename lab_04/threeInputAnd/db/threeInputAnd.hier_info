@@ -1,0 +1,8 @@
+|threeInputAnd
+SW[0] => ab.IN0
+SW[1] => ab.IN1
+SW[2] => abc.IN1
+LEDR[0] <= LEDR[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK_50 => LEDR[0]~reg0.CLK
+
+
